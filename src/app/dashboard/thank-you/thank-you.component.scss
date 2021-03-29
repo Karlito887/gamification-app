@@ -1,0 +1,25 @@
+.thank-you {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__star {
+    margin-bottom: 1rem;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  .name {
+    margin: 0;
+  }
+}

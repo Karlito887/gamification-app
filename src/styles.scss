@@ -1,6 +1,6 @@
 $color-dark: #232931;
 $color-light-dark: #393e46;
-$color-green: rgb(71, 212, 71);
+$color-green: rgb(115, 191, 11);
 
 
 .mat-drawer-shown {
@@ -8,8 +8,8 @@ $color-green: rgb(71, 212, 71);
 }
 
 * {
-  // margin: 0;
-  // padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -41,8 +41,6 @@ ul {
 
 .green-text {
   color: $color-green;
-  height: 100%;
-  width: 100%;
 }
 
 .dark-block {
@@ -59,7 +57,8 @@ ul {
 
 .main-container {
   width: 100%;
-  height: calc(100% - 60px);
+  // height: calc(100% - 60px);
+  height: 660px;
   padding: 1.5rem;
 }
 
@@ -75,8 +74,9 @@ ul {
 // }
 
 .block-title {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .block-button {
@@ -85,4 +85,28 @@ ul {
   position: absolute;
   right: 1.4rem;
   top: 1.4rem;
+}
+
+.avatar-big {
+  height: 140px;
+  width: 140px;
+}
+
+.avatar-min {
+  height: 35px;
+  width: 35px;
+  margin-right: .8rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  background-color: #474e58;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

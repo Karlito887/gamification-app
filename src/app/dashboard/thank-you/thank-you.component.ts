@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-thank-you',
-  template: `
-    <p>
-      thank-you works!
-    </p>
-  `,
+  templateUrl: './thank-you.component.html',
   styleUrls: ['./thank-you.component.scss']
 })
 export class ThankYouComponent implements OnInit {
@@ -16,4 +12,10 @@ export class ThankYouComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  thankUser = {
+    fullName: 'Carl Jhonson',
+    name: 'Carl',
+    lastName: 'Jhonson',
+    image: '',
+  }
 }

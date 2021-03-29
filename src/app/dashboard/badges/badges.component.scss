@@ -1,0 +1,39 @@
+@import '../../../styles.scss';
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &__count {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 6.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-around;
+
+    &-item {
+      position: relative;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    &-item::after {
+      content: '';
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50px;
+      background-color: $color-green;
+      position: absolute;
+      right: -12px;
+      top: 36%;
+    }
+  }
+}
