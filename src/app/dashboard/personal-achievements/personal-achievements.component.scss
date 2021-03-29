@@ -1,0 +1,48 @@
+.personal-achievements {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 0.8rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5rem;
+    margin-right: .8rem;
+  }
+
+  &__time {
+    font-size: 1.2rem;
+  }
+
+  &__points {
+    display: flex;
+    align-items: center;
+    color: rgb(255, 189, 66);
+  }
+
+  &__circle {
+    height: 1rem;
+    width: 1rem;
+    background-color: rgb(255, 189, 66);
+    border-radius: 50px;
+    margin-right: .4rem;
+  }
+
+}

@@ -1,0 +1,19 @@
+<div class="personal-achievements">
+  <p class="block-title">Personal achievements</p>
+  <button class="block-button">Request</button>
+  <ul class="personal-achievements__list">
+    <li class="personal-achievements__item" *ngFor="let item of personalAchievemets">
+      <div>
+        <img src="{{ item.image }}" alt="personal achievement image" class="personal-achievements__image">
+      </div>
+      <div class="personal-achievements__info">
+        <span class="personal-achievements__title">{{ item.title }}</span>
+        <span class="personal-achievements__time">{{ item.time }}</span>
+      </div>
+      <div class="personal-achievements__points">
+        <div class="personal-achievements__circle"></div>
+        <span>+ {{ item.point }} xp</span>
+      </div>
+    </li>
+  </ul>
+</div>
