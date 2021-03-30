@@ -48,6 +48,7 @@ ul {
   padding: 1.4rem;
   height: 100%;
   width: 100%;
+  overflow: auto;
 }
 
 .green-block {
@@ -74,7 +75,7 @@ ul {
 // }
 
 .block-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -111,16 +112,14 @@ ul {
   align-items: center;
 }
 
-
-
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
   overflow-y: scroll;
-  background: grey;
+  background: #474e58;
   box-shadow: inset 0 0 4px #707070;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: blue;
-  border-radius: 10px;
+  background: $color-green;
+  border-radius: 5px;
 }
