@@ -6,7 +6,7 @@
     </div>
     <p>Hey hey hey. Thank for your help!!!</p>
     <div class="thank-you__user">
-      <div *ngIf="thankUser.image; else textAvatar">
+      <div *ngIf="thankUser?.image; else textAvatar">
         <img class="avatar avatar-min" [src]="thankUser.image" alt="avatar">
       </div>
       <ng-template #textAvatar>
