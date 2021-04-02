@@ -9,11 +9,13 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { AvatarComponent } from './core/avatar/avatar.component';
 import { CoreModule } from './core/core.module';
+import { RequestDialogComponent } from './dialogs/request-dialog/request-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    RequestDialogComponent,
   ],
   imports: [
     BrowserModule,

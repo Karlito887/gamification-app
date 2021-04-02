@@ -1,7 +1,7 @@
 <div class="personal-achievements">
   <div class="space-between">
     <p class="block-title">Personal achievements</p>
-    <button class="btn block-button">Request</button>
+    <button class="btn block-button" (click)="openRequestDialog()">Request</button>
   </div>
   <ul class="personal-achievements__list">
     <li class="personal-achievements__item" *ngFor="let item of personalAchievements">
