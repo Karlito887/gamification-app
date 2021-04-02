@@ -8,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   isSidenavOpen: boolean = false
   user = {
-    image: 'https://upload.wikimedia.org/wikipedia/ru/thumb/a/a7/Head.cj.jpg/274px-Head.cj.jpg',
-    fullName: 'Nazarii Karlyk',
+    image: '../../assets/CJ.jpg',
+    firstName: 'Nazarii',
+    lastName: 'Karlyk',
     badges: 5,
     xp: 110
   }
 
+  get fullName(): string {
+    return this.user.firstName + ' ' + this.user.lastName
+  }
 
-  toggleSidenav() {
+  toggleSidenav(): void {
     this.isSidenavOpen = !this.isSidenavOpen
   }
 

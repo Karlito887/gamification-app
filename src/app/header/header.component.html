@@ -3,22 +3,27 @@
       <div class="sidenav__menu">
         <mat-icon class="icon sidenav__icon" (click)="toggleSidenav()">menu</mat-icon>
       </div>
+
       <div class="logo">gmfctn!</div>
-      <div>
-        <img class="avatar avatar-big" [src]="user.image" alt="avatar">
-      </div>
-      <span class="sidenav__name">{{ user.fullName }}</span>
+
+      <app-avatar [user]="user" [size]="'big'"></app-avatar>
+
+      <span class="sidenav__name">{{ fullName }}</span>
+
       <div class="sidenav__buttons-group">
-        <button class="sidenav__button">Edit profile</button>
-        <button class="sidenav__button">Change password</button>
-        <button class="sidenav__button">Log out</button>
+        <button class="btn sidenav__button">Edit profile</button>
+        <button class="btn sidenav__button">Change password</button>
+        <button class="btn sidenav__button">Log out</button>
       </div>
+
       <div class="sidenav__score">
         <p><span class="green-text">Total: </span>{{ user.badges }} badges</p>
+
         <p><span class="green-text">Total: </span>{{ user.xp }} XP</p>
       </div>
+
       <div class="sidenav__links">
-        <a mat-raised-button class="sidenav__link" routerLink="/" routerLinkActive="router-link-active">
+        <a mat-raised-button class="sidenav__link" routerLink="dashboard" routerLinkActive="router-link-active">
           Dashboard
         </a>
 
@@ -35,23 +40,17 @@
         </div>
         <div class="logo">gmfctn!</div>
       </div>
-
       <div class="header__part">
-        <a mat-raised-button class="header__link" routerLink="/" routerLinkActive="router-link-active">
+        <a class="header__link" routerLink="dashboard" routerLinkActive="router-link-active">
           Dashboard
         </a>
-
-        <a mat-raised-button class="header__link" routerLink="#" routerLinkActive="router-link-active">
+        <a class="header__link" routerLink="badges" routerLinkActive="router-link-active">
           Badges
         </a>
-
       </div>
-
       <div class="header__part">
-        <div>
-          <img class="avatar avatar-min" [src]="user.image" alt="avatar">
-        </div>
-        <span>{{ user.fullName }}</span>
+        <app-avatar [user]="user" [size]="'small'"></app-avatar>
+        <span>{{ fullName }}</span>
 
         <mat-icon class="icon" [matMenuTriggerFor]="headerMenu">arrow_drop_down</mat-icon>
         <mat-menu #headerMenu="matMenu">
@@ -67,14 +66,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!--
-<mat-sidenav-container далі
-<mat-sidenav - це контент всередині сайдбару,
-</mat-sidenav>
-<mat-sidenav-content>
-<mat-toolbar>
-тут  хедер, всі ці навігашки і сайдбари, на які клікає
-</mat-toolbar>
-</mat-sidenav-content>
-</mat-sidenav-container> -->

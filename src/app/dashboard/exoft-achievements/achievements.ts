@@ -9,7 +9,7 @@ export const achievements = [
   {
     firstName: 'Carl',
     lastName: 'Jhonson',
-    image: '',
+    image: '../../../assets/CJ.jpg',
     title: 'Got achievement groove street power',
     date: '0 mins ago'
   },
@@ -23,7 +23,7 @@ export const achievements = [
   {
     firstName: 'Carl',
     lastName: 'Jhonson',
-    image: '',
+    image: '../../../assets/CJ.jpg',
     title: 'Got achievement groove street power',
     date: '2 mins ago'
   },
@@ -37,7 +37,7 @@ export const achievements = [
   {
     firstName: 'Carl',
     lastName: 'Jhonson',
-    image: '',
+    image: '../../../assets/CJ.jpg',
     title: 'Got achievement groove street power',
     date: '4 mins ago'
   },
@@ -51,7 +51,7 @@ export const achievements = [
   {
     firstName: 'Carl',
     lastName: 'Jhonson',
-    image: '',
+    image: '../../../assets/CJ.jpg',
     title: 'Got achievement groove street power',
     date: '6 mins ago'
   },
@@ -65,7 +65,7 @@ export const achievements = [
   {
     firstName: 'Carl',
     lastName: 'Jhonson',
-    image: '',
+    image: '../../../assets/CJ.jpg',
     title: 'Got achievement groove street power',
     date: '8 mins ago'
   },
@@ -79,7 +79,7 @@ export const achievements = [
   {
     firstName: 'Carl',
     lastName: 'Jhonson',
-    image: '',
+    image: '../../../assets/CJ.jpg',
     title: 'Got achievement groove street power',
     date: '10 mins ago'
   },
@@ -93,7 +93,7 @@ export const achievements = [
   {
     firstName: 'Carl',
     lastName: 'Jhonson',
-    image: '',
+    image: '../../../assets/CJ.jpg',
     title: 'Got achievement groove street power',
     date: '12 mins ago'
   }

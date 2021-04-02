@@ -10,7 +10,7 @@ const material = [
   MatIconModule,
   MatSidenavModule,
   MatMenuModule,
-  MatGridListModule
+  MatGridListModule,
 ]
 
 @NgModule({

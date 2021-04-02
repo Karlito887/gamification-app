@@ -6,14 +6,7 @@
   <div class="exoft-achievements__content">
     <div class="exoft-achievements__item" *ngFor="let item of achievements">
       <div class="exoft-achievements__avatar">
-        <div *ngIf="item?.image; else textAvatar">
-          <img class="avatar avatar-min" [src]="item.image" alt="avatar">
-        </div>
-        <ng-template #textAvatar>
-          <div class="avatar avatar-min center-content">
-            {{ item.firstName[0] + item.lastName[0] }}
-          </div>
-        </ng-template>
+        <app-avatar [size]="'small'" [user]="item"></app-avatar>
       </div>
       <div class="exoft-achievements__item-data">
         <div class="exoft-achievements__item-info">

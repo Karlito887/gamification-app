@@ -6,14 +6,7 @@
     </div>
     <p>Hey hey hey. Thank for your help!!!</p>
     <div class="thank-you__user">
-      <div *ngIf="thankUser?.image; else textAvatar">
-        <img class="avatar avatar-min" [src]="thankUser.image" alt="avatar">
-      </div>
-      <ng-template #textAvatar>
-        <div class="avatar avatar-min center-content">
-          {{ thankUser.name[0] + thankUser.lastName[0] }}
-        </div>
-      </ng-template>
+      <app-avatar [user]="thankUser"></app-avatar>
       <p class="green-color name">{{ thankUser.fullName }}</p>
     </div>
   </div>

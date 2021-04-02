@@ -1,8 +1,10 @@
 <div class="personal-achievements">
-  <p class="block-title">Personal achievements</p>
-  <button class="block-button">Request</button>
+  <div class="space-between">
+    <p class="block-title">Personal achievements</p>
+    <button class="btn block-button">Request</button>
+  </div>
   <ul class="personal-achievements__list">
-    <li class="personal-achievements__item" *ngFor="let item of personalAchievemets">
+    <li class="personal-achievements__item" *ngFor="let item of personalAchievements">
       <div>
         <img src="{{ item.image }}" alt="personal achievement image" class="personal-achievements__image">
       </div>

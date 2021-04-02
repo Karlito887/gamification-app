@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exoft-achievements.component.scss']
 })
 export class ExoftAchievementsComponent implements OnInit {
-  public achievements = achievements
+  public achievements = achievements;
 
   constructor() { }
 

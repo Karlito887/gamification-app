@@ -9,14 +9,7 @@
       <div class="top-chart__user" *ngFor="let user of users">
         <div class="top-chart__user-info-container">
           <div class="top-chart__user-info">
-            <div *ngIf="user?.image; else textAvatar">
-              <img class="avatar avatar-min" [src]="user.image" alt="avatar">
-            </div>
-            <ng-template #textAvatar>
-              <div class="avatar avatar-min center-content">
-                {{ user.firstName[0] + user.lastName[0] }}
-              </div>
-            </ng-template>
+          <app-avatar [user]=user [size]="'small'"></app-avatar>
             <div class="top-chart__user-name">
               <span>{{ user.firstName }}</span>
               <span>{{ user.lastName }}</span>

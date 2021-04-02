@@ -14,7 +14,7 @@ export class ThankYouComponent implements OnInit {
 
   thankUser = {
     fullName: 'Carl Jhonson',
-    name: 'Carl',
+    firstName: 'Carl',
     lastName: 'Jhonson',
     image: '',
   }

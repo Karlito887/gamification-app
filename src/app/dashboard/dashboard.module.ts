@@ -10,6 +10,7 @@ import { BadgesComponent } from './badges/badges.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
 import { TopChartComponent } from './top-chart/top-chart.component';
 import { ChallengesComponent } from './challenges/challenges.component';
+import { CoreModule } from '../core/core.module';
 
 const routes = [
   {
@@ -19,10 +20,13 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent, GreetingComponent, PersonalAchievementsComponent, ExoftAchievementsComponent, BadgesComponent, ThankYouComponent, TopChartComponent, ChallengesComponent],
+  declarations: [DashboardComponent, GreetingComponent,
+    PersonalAchievementsComponent, ExoftAchievementsComponent, BadgesComponent,
+    ThankYouComponent, TopChartComponent, ChallengesComponent],
   imports: [
     CommonModule,
     MaterialModule,
+    CoreModule,
     RouterModule.forChild(routes)
   ]
 })
