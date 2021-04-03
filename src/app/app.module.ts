@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AvatarComponent } from './core/avatar/avatar.component';
 import { CoreModule } from './core/core.module';
 import { RequestDialogComponent } from './dialogs/request-dialog/request-dialog.component';
+import { UserProfileDialogComponent } from './dialogs/user-profile-dialog/user-profile-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RequestDialogComponent,
+    UserProfileDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { RequestDialogComponent } from './dialogs/request-dialog/request-dialog.
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -135,15 +135,6 @@ mat-sidenav {
   }
 }
 
-.icon {
-  transition: all 0.2s;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
 .router-link-active {
   color: $color-green;
   position: relative;

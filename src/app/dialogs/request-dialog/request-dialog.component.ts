@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-request-dialog',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-dialog.component.scss']
 })
 export class RequestDialogComponent implements OnInit {
+  requestAchievementForm!: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.requestAchievementForm = this.fb.group({
+      achievement: ['', Validators.required],
+      message: ['']
+    })
   }
-
 }

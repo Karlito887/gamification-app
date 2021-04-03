@@ -2,9 +2,47 @@ $color-dark: #232931;
 $color-light-dark: #393e46;
 $color-green: rgb(111, 179, 16);
 
-
 .mat-drawer-shown {
   background-color: rgba($color-dark, .8) !important;
+}
+
+.mat-dialog-container{
+  background-color: $color-light-dark;
+}
+
+.mat-dialog-container .mat-form-field {
+  width: 100%;
+}
+
+.mat-select-panel {
+  background-color: $color-light-dark;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: inherit;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-form-field-label {
+  /*change color of label*/
+  color: rgba(255,255,255,.7);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-form-field-underline {
+/*change color of underline*/
+background-color: rgba(255,255,255,.7);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-form-field-ripple {
+/*change color of underline when focused*/
+background-color: rgba(255,255,255,.7);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: rgba(255,255,255,.7);
+}
+
+.mat-input-element {
+  caret-color: inherit;
 }
 
 * {
@@ -94,6 +132,10 @@ ul {
   top: 1.4rem;
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+}
+
 .center-content {
   display: flex;
   justify-content: center;
@@ -115,4 +157,13 @@ ul {
 .space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.icon {
+  transition: all 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }

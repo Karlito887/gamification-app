@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PERSONAL_ACHIEVEMENTS } from './personal-achievements';
 import { MatDialog } from '@angular/material/dialog'
+import { RequestDialogComponent } from 'src/app/dialogs/request-dialog/request-dialog.component';
 
 @Component({
   selector: 'app-personal-achievements',
@@ -15,6 +16,9 @@ export class PersonalAchievementsComponent implements OnInit {
   }
 
   openRequestDialog() {
-    // this.matDialog.open()
+    const dialogRef = this.matDialog.open(RequestDialogComponent)
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    })
   }
 }
