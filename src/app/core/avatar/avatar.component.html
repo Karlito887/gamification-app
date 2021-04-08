@@ -1,8 +1,0 @@
-<div *ngIf="user?.image; else textAvatar">
-  <img class="avatar" [ngClass]="size === 'big' ? 'avatar-big' : 'avatar-min'" [src]="user?.image" alt="avatar">
-</div>
-<ng-template #textAvatar>
-  <div class="avatar avatar-min center-content">
-    {{ user.firstName[0] + user.lastName[0] }}
-  </div>
-</ng-template>

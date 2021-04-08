@@ -1,0 +1,13 @@
+<div class="dialog-top">
+  <mat-icon class="icon" mat-dialog-close>close</mat-icon>
+</div>
+<h2>Leave the comment</h2>
+<mat-dialog-content>
+  <form [formGroup]="sayThanksForm">
+    <mat-form-field>
+      <input type="text" matInput formControlName="message">
+    </mat-form-field>
+  <button class="dialog-btn btn" type="submit" [disabled]="!sayThanksForm.valid">Say thanks</button>
+
+  </form>
+</mat-dialog-content>

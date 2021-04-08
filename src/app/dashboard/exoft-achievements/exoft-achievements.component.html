@@ -6,14 +6,14 @@
   <div class="exoft-achievements__content">
     <div class="exoft-achievements__item" *ngFor="let item of achievements">
       <div class="exoft-achievements__avatar">
-        <app-avatar [size]="'small'" [user]="item"></app-avatar>
+        <app-avatar [size]="'small'" [user]="item.user"></app-avatar>
       </div>
       <div class="exoft-achievements__item-data">
         <div class="exoft-achievements__item-info">
-          <span class="green-text">{{ item.firstName + ' ' + item.lastName }}</span>
-          <span class="exoft-achievements__item-date">{{ item.date }}</span>
+          <span class="green-text">{{ item.user.firstName + ' ' + item.user.lastName }}</span>
+          <span class="exoft-achievements__item-date">{{ item.achievement.date }}</span>
         </div>
-        <span class="exoft-achievements__item-title">{{ item.title }}</span>
+        <span class="exoft-achievements__item-title">{{ item.achievement.title }}</span>
         <div class="exoft-achievements__item-records">Records</div>
       </div>
     </div>

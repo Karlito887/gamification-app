@@ -1,3 +1,5 @@
+import { User } from './../../models/user';
+import { AuthUserService } from './../../services/auth-user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,21 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./greeting.component.scss']
 })
 export class GreetingComponent implements OnInit {
-  user = {
-    name: 'Nazarii'
-  }
+  user!: User;
   time: string = '';
-  constructor() { }
+  constructor(private authUserService: AuthUserService) { }
 
   ngOnInit(): void {
-    this.setTime()
+    this.user = this.authUserService.getUser();
+    this.setTime();
   }
 
-  setTime() {
+  setTime(): void {
     const times = ['morning', 'day', 'evening', 'night'];
     const currentHour = new Date().getHours();
 
-    switch(true) {
+    switch (true) {
       case currentHour >= 0 && currentHour <= 5:
         this.time = times[3];
         break;

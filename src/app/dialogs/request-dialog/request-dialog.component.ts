@@ -15,6 +15,6 @@ export class RequestDialogComponent implements OnInit {
     this.requestAchievementForm = this.fb.group({
       achievement: ['', Validators.required],
       message: ['']
-    })
+    });
   }
 }

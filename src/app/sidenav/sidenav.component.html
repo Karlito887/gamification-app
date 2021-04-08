@@ -1,0 +1,31 @@
+<div class="sidenav__menu">
+  <mat-icon class="icon sidenav__icon" (click)="sidenavService.toggleSidenav()">menu</mat-icon>
+</div>
+
+<div class="logo">gmfctn!</div>
+
+<app-avatar [user]="user" [size]="'big'"></app-avatar>
+
+<span class="sidenav__name">{{ user.firstName + ' ' + user.lastName }}</span>
+
+<div class="sidenav__buttons-group">
+  <button class="btn sidenav__button">Edit profile</button>
+  <button class="btn sidenav__button">Change password</button>
+  <button class="btn sidenav__button">Log out</button>
+</div>
+
+<div class="sidenav__score">
+  <p><span class="green-text">Total: </span>{{ user.badges }} badges</p>
+
+  <p><span class="green-text">Total: </span>{{ user.xp }} XP</p>
+</div>
+
+<div class="sidenav__links">
+  <a mat-raised-button class="sidenav__link" routerLink="dashboard" routerLinkActive="router-link-active">
+    Dashboard
+  </a>
+
+  <a mat-raised-button class="sidenav__link" routerLink="badges" routerLinkActive="router-link-active">
+    Badges
+  </a>
+</div>

@@ -1,1 +1,23 @@
-<p>badges works!</p>
+<mat-grid-list class="dashboard-container" cols="3"  rowHeight="fit" gutterSize="15px" [style.height]="'100%'">
+
+  <mat-grid-tile>
+    <app-personal-achievements title="last achievements" class="dark-block"></app-personal-achievements>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-badges title="total achievements and exp" [showXp]="true" class="dark-block"></app-badges>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-user-info class="dark-block"></app-user-info>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2">
+    <app-achievements-list class="dark-block"></app-achievements-list>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-thank-you class="dark-block"></app-thank-you>
+  </mat-grid-tile>
+
+</mat-grid-list>

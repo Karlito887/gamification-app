@@ -6,8 +6,14 @@ $color-green: rgb(111, 179, 16);
   background-color: rgba($color-dark, .8) !important;
 }
 
+
 .mat-dialog-container{
   background-color: $color-light-dark;
+
+  .mat-dialog-content.space-between {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .mat-dialog-container .mat-form-field {
@@ -43,6 +49,19 @@ background-color: rgba(255,255,255,.7);
 
 .mat-input-element {
   caret-color: inherit;
+}
+
+.mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+  background-color: $color-green;
+  border: 1px solid white;
+}
+
+table.mat-table {
+  background: inherit;
+}
+
+table th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  border-bottom-style: none !important;
 }
 
 * {
@@ -130,10 +149,17 @@ ul {
   // position: absolute;
   right: 1.4rem;
   top: 1.4rem;
+  min-width: 7rem;
 }
 
 .btn:disabled {
   cursor: not-allowed;
+}
+
+.dialog-btn {
+  width: 100%;
+  background-color: $color-green;
+  height: 3rem;
 }
 
 .center-content {
@@ -157,6 +183,7 @@ ul {
 .space-between {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .icon {

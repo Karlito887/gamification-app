@@ -1,4 +1,5 @@
-import { USERS } from './users';
+import { UsersService } from './../../services/users.service';
+import { USERS } from '../../../assets/data/users';
 import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,21 +12,26 @@ export class TopChartComponent implements OnInit {
   public totalXp: number = 0;
   public maxWidth: number = 160;
 
-  users: User[] = USERS
+  users: User[] = [];
 
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
+    this.users = this.usersService.getUsers();
     this.buildGraph();
   }
 
-  buildGraph() {
+  buildGraph(): void {
     this.users.forEach(element => {
-      if(element.xp) {
+      if (element.xp) {
         this.totalXp += element.xp;
-        element.size = Math.round((element.xp * this.maxWidth)/this.totalXp) + '%';
+      }
+    });
+
+    this.users.forEach(element => {
+      if (element.xp) {
+        element.size = Math.round((element.xp * this.maxWidth) / this.totalXp) + '%';
       }
     });
   }
-
 }

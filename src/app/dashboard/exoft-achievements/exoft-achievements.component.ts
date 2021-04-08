@@ -1,4 +1,6 @@
-import { achievements } from './achievements';
+import { Achievement } from './../../models/achievement';
+import { User } from './../../models/user';
+import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exoft-achievements.component.scss']
 })
 export class ExoftAchievementsComponent implements OnInit {
-  public achievements = achievements;
+  public achievements: {user: User, achievement: Achievement}[] = [];
 
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
+    this.achievements = this.usersService.getAchievements();
   }
-
 }

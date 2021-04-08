@@ -1,1 +1,24 @@
-<p>user-profile-dialog works!</p>
+<div class="dialog-top">
+  <mat-icon class="icon" mat-dialog-close>close</mat-icon>
+</div>
+<mat-dialog-content class="space-between">
+  <div class="user-info">
+    <app-avatar [user]="user" [size]="'big'"></app-avatar>
+    <div class="user-details">
+      <p class="user-name">{{ user.firstName + ' ' + user.lastName }}</p>
+      <p><span class="green-text">EXP:</span> {{ user.xp }}XP</p>
+    </div>
+  </div>
+  <div class="achievements-container">
+    <div class="achievement" *ngFor="let achievement of user.achievements">
+      <div matBadge="{{ achievement.count }}">
+        <img src="../../../assets/achievement.jpg" class="achievement-image"
+      alt="achievement icon">
+      </div>
+      <p>{{ achievement.title }}</p>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+  <button class="dialog-btn btn" (click)="sayThanks()">Say thanks</button>

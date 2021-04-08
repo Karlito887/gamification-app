@@ -1,0 +1,13 @@
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="sidenavService.isSidenavOpen" class="sidenav">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-toolbar></app-toolbar>
+
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
