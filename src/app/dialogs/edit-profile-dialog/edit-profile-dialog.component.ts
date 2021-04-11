@@ -30,7 +30,6 @@ export class EditProfileDialogComponent implements OnInit {
 
   onSubmit() {
     console.log(this.editProfileForm.value);
-
   }
 
 }

@@ -1,39 +1,39 @@
 <div class="dialog-content-wrapper">
-  <!-- <div class="dialog-top"> -->
-    <div class="dialog-details">
-      <mat-icon class="icon" mat-dialog-close>arrow_back</mat-icon>
-      <h3 class="dialog-title">Profile settings</h3>
-    <!-- </div> -->
+  <div class="dialog-details">
+    <mat-icon class="icon" mat-dialog-close>arrow_back</mat-icon>
+    <h3 class="dialog-title">Profile settings</h3>
   </div>
+
   <div class="dialog-avatar">
     <app-avatar [user]="user" size='medium'></app-avatar>
   </div>
+
   <mat-dialog-content>
     <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()">
-     <div class="row">
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Last name</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+      </div>
+
       <mat-form-field class="example-full-width">
-        <mat-label>First name</mat-label>
-        <input matInput formControlName="firstName">
+        <mat-label>Email address</mat-label>
+        <input matInput type="email" formControlName="email">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>Last name</mat-label>
-        <input matInput formControlName="lastName">
+        <mat-label>Status</mat-label>
+        <input matInput formControlName="status">
       </mat-form-field>
-     </div>
-
-     <mat-form-field class="example-full-width">
-      <mat-label>Email address</mat-label>
-      <input matInput type="email" formControlName="email">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Status</mat-label>
-      <input matInput formControlName="status">
-    </mat-form-field>
     </form>
   </mat-dialog-content>
 </div>
 
-<button class="dialog-btn btn" (click)="onSubmit()"
-[disabled]="!editProfileForm.valid" mat-dialog-close>SAVE CHANGES</button>
+<button class="dialog-btn btn" (click)="onSubmit()" [disabled]="!editProfileForm.valid" mat-dialog-close>SAVE
+  CHANGES</button>

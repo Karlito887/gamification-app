@@ -1,9 +1,7 @@
-import { EditProfileDialogService } from './../../services/edit-profile-dialog.service';
-import { MatDialog } from '@angular/material/dialog';
+import { DialogsService } from './../../services/dialogs.service';
 import { User } from './../../models/user';
 import { AuthUserService } from './../../services/auth-user.service';
 import { Component, OnInit } from '@angular/core';
-import { EditProfileDialogComponent } from 'src/app/dialogs/edit-profile-dialog/edit-profile-dialog.component';
 
 @Component({
   selector: 'app-user-info',
@@ -13,7 +11,7 @@ import { EditProfileDialogComponent } from 'src/app/dialogs/edit-profile-dialog/
 export class UserInfoComponent implements OnInit {
   user!: User;
   constructor(private authUserService: AuthUserService,
-    public editProfileDialogService: EditProfileDialogService) { }
+    public dialogsService: DialogsService) { }
 
   ngOnInit(): void {
     this.user = this.authUserService.getUser();

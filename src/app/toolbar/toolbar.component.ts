@@ -1,5 +1,4 @@
-import { EditProfileDialogService } from './../services/edit-profile-dialog.service';
-import { MatDialog } from '@angular/material/dialog';
+import { DialogsService } from './../services/dialogs.service';
 import { SidenavService } from './../services/sidenav.service';
 import { AuthUserService } from './../services/auth-user.service';
 import { User } from './../models/user';
@@ -14,7 +13,7 @@ export class ToolbarComponent implements OnInit {
   user!: User;
   constructor(private authUserService: AuthUserService,
     public sidenavService: SidenavService,
-    public editProfileDialogService: EditProfileDialogService) { }
+    public dialogsService: DialogsService) { }
 
   ngOnInit(): void {
     this.user = this.authUserService.getUser();
