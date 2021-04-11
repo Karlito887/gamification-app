@@ -11,9 +11,14 @@
     margin-right: .8rem;
   }
 
+  &-medium {
+    height: 9rem;
+    width: 9rem;
+  }
+
   &-big {
-    height: 140px;
-    width: 140px;
+    height: 14rem;
+    width: 14rem;
     font-size: 7rem;
     cursor: initial;
   }

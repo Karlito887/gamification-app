@@ -14,6 +14,7 @@ import { UserProfileDialogComponent } from './dialogs/user-profile-dialog/user-p
 import { SayThanksDialogComponent } from './dialogs/say-thanks-dialog/say-thanks-dialog.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { EditProfileDialogComponent } from './dialogs/edit-profile-dialog/edit-profile-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     SayThanksDialogComponent,
     SidenavComponent,
     ToolbarComponent,
+    EditProfileDialogComponent,
   ],
   imports: [
     BrowserModule,

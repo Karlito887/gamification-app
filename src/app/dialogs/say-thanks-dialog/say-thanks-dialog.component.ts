@@ -16,4 +16,9 @@ export class SayThanksDialogComponent implements OnInit {
       message: ['', Validators.required]
     });
   }
+
+  onSubmit() {
+    console.log(this.sayThanksForm.value);
+
+  }
 }

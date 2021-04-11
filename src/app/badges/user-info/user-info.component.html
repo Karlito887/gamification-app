@@ -1,6 +1,6 @@
 <div class="user__wrapper">
   <div class="button-wrapper">
-    <button class="btn block-button">Edit</button>
+    <button class="btn block-button" (click)="editProfileDialogService.open()">Edit</button>
   </div>
 
   <app-avatar [user]="user" [size]="'big'"></app-avatar>

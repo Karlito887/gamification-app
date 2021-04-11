@@ -1,0 +1,39 @@
+mat-dialog-content {
+  margin-bottom: 6rem;
+}
+
+.dialog {
+  &-top {
+    // position: relative;
+  }
+
+  &-details {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transform: translate(0, -7rem);
+
+    mat-icon {
+      margin-right: 1.6rem;
+    }
+  }
+
+  &-title {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  &-avatar {
+    position: absolute;
+    transform: translate(25rem, -75%);
+  }
+}
+
+form {
+  margin-top: 2rem;
+
+  mat-label {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+  }
+}

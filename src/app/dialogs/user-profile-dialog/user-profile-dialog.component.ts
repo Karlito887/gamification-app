@@ -10,15 +10,18 @@ import { SayThanksDialogComponent } from '../say-thanks-dialog/say-thanks-dialog
   templateUrl: './user-profile-dialog.component.html',
   styleUrls: ['./user-profile-dialog.component.scss', '../request-dialog/request-dialog.component.scss']
 })
-export class UserProfileDialogComponent {
+export class UserProfileDialogComponent implements OnInit {
+  isMe: boolean = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public user: User,
   public matDialog: MatDialog,
   private authUserService: AuthUserService) { }
 
-  sayThanks(): void {
-    if (this.authUserService.user.firstName === this.user.firstName) return;
+  ngOnInit() {
+    this.isMe = this.authUserService.user.firstName === this.user.firstName;
+  }
 
+  sayThanks(): void {
     this.matDialog.open(SayThanksDialogComponent);
   }
 }

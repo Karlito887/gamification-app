@@ -14,12 +14,12 @@
     </a>
   </div>
   <div class="header__part">
-    <app-avatar [user]="user" [size]="'small'"></app-avatar>
+    <app-avatar [user]="user" [size]="'min'"></app-avatar>
     <span>{{ user.firstName + ' ' + user.lastName }}</span>
 
     <mat-icon class="icon" [matMenuTriggerFor]="headerMenu">arrow_drop_down</mat-icon>
     <mat-menu #headerMenu="matMenu">
-      <button mat-menu-item>Edit profile</button>
+      <button mat-menu-item (click)="editProfileDialogService.open()">Edit profile</button>
       <button mat-menu-item>Change password</button>
       <button mat-menu-item>Log out</button>
     </mat-menu>

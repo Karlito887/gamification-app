@@ -9,7 +9,7 @@
 <span class="sidenav__name">{{ user.firstName + ' ' + user.lastName }}</span>
 
 <div class="sidenav__buttons-group">
-  <button class="btn sidenav__button">Edit profile</button>
+  <button class="btn sidenav__button" (click)="editProfileDialogService.open()">Edit profile</button>
   <button class="btn sidenav__button">Change password</button>
   <button class="btn sidenav__button">Log out</button>
 </div>
