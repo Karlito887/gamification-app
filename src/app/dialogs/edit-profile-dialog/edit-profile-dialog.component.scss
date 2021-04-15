@@ -3,7 +3,6 @@ mat-dialog-content {
 }
 
 .dialog {
-
   &-details {
     position: absolute;
     display: flex;
@@ -22,7 +21,7 @@ mat-dialog-content {
 
   &-avatar {
     position: absolute;
-    transform: translate(25rem, -75%);
+    transform: translate(32rem, -75%);
   }
 }
 

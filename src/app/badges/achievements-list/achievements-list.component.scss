@@ -9,18 +9,19 @@
 
 table {
   width: 100%;
-
 }
 
-.achievement__image {
-  height: 40px;
-  width: 40px;
-  border-radius: 50px;
-  object-fit: cover;
-  margin-right: 0.8rem;
-}
+.achievement {
+  &-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 0.8rem;
+  }
 
-.achievement-info {
-  display: flex;
-  align-items: center;
+  &-info {
+    display: flex;
+    align-items: center;
+  }
 }

@@ -1,15 +1,21 @@
 <div class="badges">
   <p class="block-title">{{ title }}</p>
-  <div class="badges__count">
-    <div class="badges__xp" *ngIf="showXp">
-      <h2 class="badges__xp-count green-text">{{ user.xp }}</h2>
-      <p class="badges__xp-subtitle">EXP</p>
+
+  <div class="badges-count">
+    <div class="badges-xp" *ngIf="showXp">
+      <h2 class="badges-xp-count green-text">{{ user.xp }}</h2>
+
+      <p class="badges-xp-subtitle">EXP</p>
     </div>
-    <h3 class="badges__count-title green-text" [style.fontSize]="showXp ? '4rem' : '6.5rem'">{{ user.badges }}</h3>
-    <p class="badges__subtitle">Badges</p>
+
+    <h3 [ngClass]="['badges-count-title', 'green-text', titleSizeClass]">{{ user.badges }}</h3>
+
+    <p class="badges-subtitle">Badges</p>
   </div>
-  <div class="badges__info">
-    <span class="badges__info-item">25% more than average</span>
-    <span class="badges__info-item">+5 new this month</span>
+
+  <div class="badges-info">
+    <span class="badges-info-item">25% more than average</span>
+
+    <span class="badges-info-item">+5 new this month</span>
   </div>
 </div>

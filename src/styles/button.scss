@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+.btn {
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 0.5rem 1rem rgb(0 0 0 / 20%);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: rgb(185, 184, 184);
+    background-color: $color-dark-green;
+  }
+}
+
+.block-button {
+  background-color: $color-green;
+  padding: .8rem 1rem;
+  width: max-content;
+  font-size: 1.4rem;
+}
+
+.dialog-btn {
+  width: 100%;
+  background-color: $color-green;
+  height: 4rem;
+  font-size: 1.8rem;
+  letter-spacing: .5px;
+}

@@ -1,9 +1,11 @@
-import { Achievement } from '../../models/achievement';
-import { User } from '../../models/user';
-import { AuthUserService } from '../../services/auth-user.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 import { RequestDialogComponent } from 'src/app/dialogs/request-dialog/request-dialog.component';
+
+import { AuthUserService } from '../../services/auth-user.service';
+
+import { Achievement } from '../../models/achievement';
 
 @Component({
   selector: 'app-personal-achievements',
@@ -12,7 +14,8 @@ import { RequestDialogComponent } from 'src/app/dialogs/request-dialog/request-d
 })
 export class PersonalAchievementsComponent implements OnInit {
   @Input() title: string = '';
-  personalAchievements!: Achievement[];
+
+  personalAchievements: Achievement[];
 
   constructor(public matDialog: MatDialog,
     private authUserService: AuthUserService) { }
@@ -24,7 +27,7 @@ export class PersonalAchievementsComponent implements OnInit {
   openRequestDialog(): void {
     const dialogRef = this.matDialog.open(RequestDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      // temporary empty func
     });
   }
 

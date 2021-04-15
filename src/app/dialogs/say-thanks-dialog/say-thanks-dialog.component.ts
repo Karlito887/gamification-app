@@ -7,18 +7,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./say-thanks-dialog.component.scss', '../request-dialog/request-dialog.component.scss']
 })
 export class SayThanksDialogComponent implements OnInit {
-  sayThanksForm!: FormGroup;
+  sayThanksForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.setForm();
+  }
+
+  setForm(): void {
     this.sayThanksForm = this.fb.group({
       message: ['', Validators.required]
     });
   }
 
-  onSubmit() {
-    console.log(this.sayThanksForm.value);
-
+  onSubmit(): void {
+    // temporary empty func
   }
 }

@@ -1,9 +1,12 @@
-import { AuthUserService } from './../../services/auth-user.service';
-import { User } from './../../models/user';
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import { SayThanksDialogComponent } from '../say-thanks-dialog/say-thanks-dialog.component';
+
+import { AuthUserService } from './../../services/auth-user.service';
+
+import { User } from './../../models/user';
 
 @Component({
   selector: 'app-user-profile-dialog',
@@ -17,7 +20,7 @@ export class UserProfileDialogComponent implements OnInit {
   public matDialog: MatDialog,
   private authUserService: AuthUserService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.isMe = this.authUserService.user.firstName === this.user.firstName;
   }
 

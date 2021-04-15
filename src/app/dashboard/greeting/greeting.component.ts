@@ -1,6 +1,8 @@
-import { User } from './../../models/user';
-import { AuthUserService } from './../../services/auth-user.service';
 import { Component, OnInit } from '@angular/core';
+
+import { AuthUserService } from './../../services/auth-user.service';
+
+import { User } from './../../models/user';
 
 @Component({
   selector: 'app-greeting',
@@ -8,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./greeting.component.scss']
 })
 export class GreetingComponent implements OnInit {
-  user!: User;
-  time: string = '';
+  user: User;
+  time: string;
+
   constructor(private authUserService: AuthUserService) { }
 
   ngOnInit(): void {
@@ -21,18 +24,12 @@ export class GreetingComponent implements OnInit {
     const times = ['morning', 'day', 'evening', 'night'];
     const currentHour = new Date().getHours();
 
-    switch (true) {
-      case currentHour >= 0 && currentHour <= 5:
-        this.time = times[3];
-        break;
-      case currentHour > 5 && currentHour <= 12:
-        this.time = times[0];
-        break;
-      case currentHour > 12 && currentHour <= 18:
-        this.time = times[1];
-        break;
-      default:
-        this.time = times[2];
-    }
+    if (currentHour >= 0 && currentHour <= 5) {
+      this.time = times[3];
+    } else if (currentHour > 5 && currentHour <= 12) {
+      this.time = times[0];
+    } else if (currentHour > 12 && currentHour <= 18) {
+      this.time = times[1];
+    } else this.time = times[2];
   }
 }

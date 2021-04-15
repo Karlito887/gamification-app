@@ -1,7 +1,9 @@
-import { MatDialog } from '@angular/material/dialog';
-import { User } from './../../models/user';
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { UserProfileDialogComponent } from 'src/app/dialogs/user-profile-dialog/user-profile-dialog.component';
+
+import { User } from './../../models/user';
 
 @Component({
   selector: 'app-avatar',
@@ -9,22 +11,22 @@ import { UserProfileDialogComponent } from 'src/app/dialogs/user-profile-dialog/
   styleUrls: ['./avatar.component.scss']
 })
 export class AvatarComponent implements OnInit {
-  @Input() user!: User;
-  @Input() size!: string;
+  @Input() user: User;
+  @Input() size: string;
 
-  sizeClass!: string;
+  sizeClass: string;
 
   constructor(public matDialog: MatDialog) { }
 
-  ngOnInit() {
-    this.setSize()
+  ngOnInit(): void {
+    this.setSize();
   }
 
-  setSize() {
-    if(this.size) {
-      this.sizeClass = `avatar-${this.size}`
+  setSize(): void {
+    if (this.size) {
+      this.sizeClass = `avatar-${this.size}`;
     } else {
-      this.sizeClass = 'avatar-min'
+      this.sizeClass = 'avatar-min';
     }
   }
 

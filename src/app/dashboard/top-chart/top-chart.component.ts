@@ -1,7 +1,9 @@
-import { UsersService } from './../../services/users.service';
-import { USERS } from '../../../assets/data/users';
-import { User } from './../../models/user';
+import { AvatarSize } from './../../enums/avatar-size.enum';
 import { Component, OnInit } from '@angular/core';
+
+import { UsersService } from './../../services/users.service';
+
+import { User } from './../../models/user';
 
 @Component({
   selector: 'app-top-chart',
@@ -9,10 +11,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-chart.component.scss']
 })
 export class TopChartComponent implements OnInit {
-  public totalXp: number = 0;
-  public maxWidth: number = 160;
-
+  totalXp: number = 0;
+  maxWidth: number = 160;
   users: User[] = [];
+  avatarSize = AvatarSize;
 
   constructor(private usersService: UsersService) { }
 
@@ -21,7 +23,7 @@ export class TopChartComponent implements OnInit {
     this.buildGraph();
   }
 
-  buildGraph(): void {
+  private buildGraph(): void {
     this.users.forEach(element => {
       if (element.xp) {
         this.totalXp += element.xp;

@@ -1,6 +1,7 @@
+import { Injectable } from '@angular/core';
+
 import { Achievement } from './../models/achievement';
 import { User } from './../models/user';
-import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +39,6 @@ export class AuthUserService {
     ]
   };
 
-  constructor() { }
-
   getUser(): User {
     return this.user;
   }
@@ -53,6 +52,7 @@ export class AuthUserService {
         result.push(el);
       }
     });
+
     return result;
   }
 }

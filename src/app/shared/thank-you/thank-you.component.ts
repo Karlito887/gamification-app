@@ -1,6 +1,8 @@
-import { User } from '../../models/user';
-import { UsersService } from '../../services/users.service';
 import { Component, OnInit } from '@angular/core';
+
+import { UsersService } from '../../services/users.service';
+
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-thank-you',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./thank-you.component.scss']
 })
 export class ThankYouComponent implements OnInit {
-  thankUser!: User;
+  thankUser: User;
 
   constructor(private usersService: UsersService) { }
 

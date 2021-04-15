@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { AvatarComponent } from './avatar/avatar.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
 import { BadgesComponent } from './badges/badges.component';

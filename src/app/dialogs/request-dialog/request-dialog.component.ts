@@ -7,11 +7,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./request-dialog.component.scss']
 })
 export class RequestDialogComponent implements OnInit {
-  requestAchievementForm!: FormGroup;
+  requestAchievementForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.setForm();
+  }
+
+  setForm(): void {
     this.requestAchievementForm = this.fb.group({
       achievement: ['', Validators.required],
       message: ['']

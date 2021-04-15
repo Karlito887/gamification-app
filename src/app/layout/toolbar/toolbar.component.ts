@@ -1,16 +1,21 @@
-import { DialogsService } from './../services/dialogs.service';
-import { SidenavService } from './../services/sidenav.service';
-import { AuthUserService } from './../services/auth-user.service';
-import { User } from './../models/user';
+import { AvatarSize } from './../../enums/avatar-size.enum';
 import { Component, OnInit } from '@angular/core';
+
+import { DialogsService } from '../../services/dialogs.service';
+import { SidenavService } from '../../services/sidenav.service';
+import { AuthUserService } from '../../services/auth-user.service';
+
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['../user-profile/user-profile.component.scss']
+  styleUrls: ['../layout.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  user!: User;
+  user: User;
+  avatarSize = AvatarSize;
+
   constructor(private authUserService: AuthUserService,
     public sidenavService: SidenavService,
     public dialogsService: DialogsService) { }

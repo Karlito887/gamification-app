@@ -1,23 +1,30 @@
 <div class="top-chart">
   <p class="block-title">top chart</p>
-  <div class="top-chart__content">
-    <div class="top-chart__subtitle">
+
+  <div class="top-chart-content">
+    <div class="top-chart-subtitle">
       <span class="green-text">Name</span>
+
       <span class="green-text">Total XP</span>
     </div>
-    <div class="top-chart__info-container">
-      <div class="top-chart__user" *ngFor="let user of users">
-        <div class="top-chart__user-info-container">
-          <div class="top-chart__user-info">
-          <app-avatar [user]=user [size]="'min'"></app-avatar>
-            <div class="top-chart__user-name">
+
+    <div class="top-chart-info-container">
+      <div class="top-chart-user" *ngFor="let user of users">
+        <div class="top-chart-user-info-container">
+          <div class="top-chart-user-info">
+
+          <app-avatar [user]=user [size]="avatarSize.Min"></app-avatar>
+            <div class="top-chart-user-name">
               <span>{{ user.firstName }}</span>
+
               <span>{{ user.lastName }}</span>
             </div>
           </div>
-          <div class="top-chart__user-xp">
+
+          <div class="top-chart-user-xp">
             {{ user.xp }}XP
           </div>
+
         </div>
         <div class="bar" [style.background-color]="user.color" [style.width]="user.size"></div>
       </div>

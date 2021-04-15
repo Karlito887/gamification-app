@@ -6,20 +6,27 @@
   justify-content: space-between;
   height: 100%;
 
-  &__count {
+  &-count {
     text-align: center;
 
     &-title {
-      font-size: 6.5rem;
       margin-bottom: 2rem;
+
+      &.min {
+        font-size: 4rem;
+      }
+
+      &.max {
+        font-size: 6.5rem;
+      }
     }
   }
 
-  &__subtitle {
+  &-subtitle {
     margin-bottom: 0;
   }
 
-  &__info {
+  &-info {
     display: flex;
     justify-content: space-around;
 
@@ -42,7 +49,7 @@
   }
 
 
-  &__xp {
+  &-xp {
     &-count {
       font-size: 9rem;
       font-weight: normal;

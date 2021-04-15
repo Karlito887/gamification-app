@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .top-chart{
-  &__subtitle {
+  &-subtitle {
     max-width: 35%;
     border-bottom: 1px solid $color-green;
     display: flex;
@@ -9,13 +9,13 @@
     margin-bottom: .7rem;
   }
 
-  &__info-container {
+  &-info-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  &__user {
+  &-user {
     display: flex;
     align-items: center;
     margin-bottom: .4rem;

@@ -17,14 +17,14 @@ mat-sidenav {
   justify-content: space-between;
   font-size: 1.6rem;
 
-  &__part {
+  &-part {
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__menu {
+  &-menu {
     margin-right: 1.2rem;
     font-size: 2rem;
 
@@ -33,7 +33,7 @@ mat-sidenav {
     }
   }
 
-  &__link {
+  &-link {
     display: block;
     box-sizing: content-box;
     padding: 1.5rem;
@@ -60,7 +60,7 @@ mat-sidenav {
   padding-top: 1.4rem;
 
 
-  &__icon{
+  &-icon{
     position: absolute;
     right: 1.2rem;
     top: 1.2rem;
@@ -75,20 +75,20 @@ mat-sidenav {
     margin-bottom: 1rem;
   }
 
-  &__name {
+  &-name {
     display: block;
     font-size: 2.4rem;
     margin-bottom: 1rem;
   }
 
-  &__buttons-group {
+  &-buttons-group {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
   }
 
-  &__button {
+  &-button {
     height: 30px;
     width: 150px;
     background-color: $color-green;
@@ -96,29 +96,29 @@ mat-sidenav {
     font-size: 1.6rem;
   }
 
-  &__button:hover {
+  &-button:hover {
     cursor: pointer;
   }
 
-  &__button:not(:last-child) {
+  &-button:not(:last-child) {
     margin-bottom: .8rem;
   }
 
-  &__score p {
+  &-score p {
     margin: 0px;
   }
 
-  &__score {
+  &-score {
     margin-bottom: 1rem;
   }
 
-  &__links {
+  &-links {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__link {
+  &-link {
     font-size: 1.9rem;
     margin-bottom: 1.8rem;
     width: max-content;
