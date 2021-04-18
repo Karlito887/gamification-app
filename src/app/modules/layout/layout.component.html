@@ -1,0 +1,13 @@
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="sidenavService.isSidenavOpen">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-toolbar *ngIf="user$ | async"></app-toolbar>
+
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,11 @@
+<div (click)="openUserProfileDialog()">
+  <div *ngIf="user?.avatarId; else textAvatar">
+    <img [ngClass]="['avatar', sizeClass]" [src]="user?.avatarId" alt="avatar">
+  </div>
+
+  <ng-template #textAvatar>
+    <div [ngClass]="['avatar', 'center-content', sizeClass]">
+      {{ user.firstName[0] + user.lastName[0] }}
+    </div>
+  </ng-template>
+</div>

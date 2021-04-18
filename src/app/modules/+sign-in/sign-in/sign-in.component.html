@@ -1,0 +1,24 @@
+<div class="sign-in-container">
+  <form [formGroup]="signInForm">
+    <div class="form-content">
+      <mat-form-field class="example-full-width">
+        <mat-label>username</mat-label>
+
+        <input matInput formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>password</mat-label>
+
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+
+      <p class="dark-green-text">forgot password ?</p>
+
+    </div>
+
+    <button class="btn green-bg" [disabled]="!signInForm.valid" (click)="onSubmit()">sign in</button>
+  </form>
+
+  <img class="logo" src="../../../assets/exoft-logo-image.png" alt="logo">
+</div>

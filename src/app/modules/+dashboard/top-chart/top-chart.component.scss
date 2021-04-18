@@ -1,0 +1,48 @@
+@import '../../../../styles.scss';
+
+.top-chart{
+  &-subtitle {
+    max-width: 35%;
+    border-bottom: 1px solid $color-green;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .7rem;
+  }
+
+  &-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-user {
+    display: flex;
+    align-items: center;
+    margin-bottom: .4rem;
+
+    &-info{
+      display: flex;
+      align-items: center;
+
+      &-container {
+        min-width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 1.6rem;
+      }
+    }
+
+    &-name {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .bar {
+    height: 2rem;
+  }
+}

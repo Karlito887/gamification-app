@@ -1,0 +1,61 @@
+@import '../../../../styles.scss';
+
+.exoft-achievements {
+  font-size: 1.2rem;
+
+  &-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 1.5rem;
+
+    &-data {
+      width: 100%;
+    }
+
+    &-records {
+      padding: 0rem 1.5rem;
+      background-color: lightseagreen;
+      border-radius: 30px;
+      width: max-content;
+    }
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: .4rem;
+    }
+
+    &-title {
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    &:not(:last-child)::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 14px;
+      height: 120px;
+      width: 1px;
+      background-color: rgb(175, 172, 172);
+      z-index: 0;
+    }
+  }
+
+  &-top {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  &-count {
+    height: 1.8rem;
+    margin-left: 1.5rem;
+    padding: 0 1rem;
+    border-radius: 15px;
+    background-color: $color-green;
+  }
+
+  &-avatar {
+    z-index: 1;
+  }
+}
