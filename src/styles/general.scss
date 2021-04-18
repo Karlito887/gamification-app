@@ -1,0 +1,72 @@
+@import './variables.scss';
+
+.green-text {
+  color: $color-green;
+}
+
+.green-bg {
+  background-color: $color-green;
+}
+
+.dark-green-text {
+  color: $color-dark-green;
+
+  &:hover {
+    color: $color-green;
+  }
+}
+
+.dark-block {
+  background-color: $color-light-dark;
+  padding: 1.4rem;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 1.4rem;
+}
+
+.green-block {
+  background-color: $color-green;
+  padding: 1.4rem;
+  font-size: 1.4rem;
+}
+
+.main-container {
+  height: calc(100vh - #{$header-height});
+  padding: 1.5rem;
+}
+
+.block-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-content-wrapper {
+  margin: 2.4rem 2.4rem 0;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
+
+.icon {
+  transition: all 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

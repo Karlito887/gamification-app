@@ -1,0 +1,64 @@
+@import '../../../styles.scss';
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &-count {
+    text-align: center;
+
+    &-title {
+      margin-bottom: 2rem;
+
+      &.min {
+        font-size: 4rem;
+      }
+
+      &.max {
+        font-size: 6.5rem;
+      }
+    }
+  }
+
+  &-subtitle {
+    margin-bottom: 0;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-around;
+
+    &-item {
+      position: relative;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    &-item::after {
+      content: '';
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50px;
+      background-color: $color-green;
+      position: absolute;
+      right: -12px;
+      top: 36%;
+    }
+  }
+
+
+  &-xp {
+    &-count {
+      font-size: 9rem;
+      font-weight: normal;
+      margin-bottom: 3rem;
+    }
+
+    &-subtitle {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}

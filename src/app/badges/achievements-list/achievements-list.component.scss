@@ -1,0 +1,27 @@
+.title {
+  margin-bottom: 3rem;
+  font-weight: 300;
+  font-size: 2.3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+}
+
+table {
+  width: 100%;
+}
+
+.achievement {
+  &-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 0.8rem;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+  }
+}

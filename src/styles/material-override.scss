@@ -1,0 +1,83 @@
+@import './variables.scss';
+
+.mat-drawer-shown {
+  background-color: rgba($color-dark, .8) !important;
+}
+
+mat-dialog-container.mat-dialog-container{
+  background-color: $color-light-dark;
+  padding: 0;
+  overflow-x: hidden;
+  border-radius: 20px;
+
+  .mat-dialog-content.space-between {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0,0,0,.7);
+}
+
+.mat-dialog-container .mat-form-field {
+  width: 100%;
+}
+
+.mat-select-panel {
+  background-color: $color-light-dark;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: inherit;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-form-field-label {
+  color: rgba(255,255,255,.7);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-form-field-underline {
+  background-color: rgba(255,255,255,.7);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-form-field-ripple {
+  background-color: rgba(255,255,255,.7);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: rgba(255,255,255,.7);
+}
+
+.mat-input-element {
+  caret-color: inherit;
+}
+
+.mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+  background-color: $color-green;
+  border: 1px solid white;
+}
+
+table.mat-table {
+  background: inherit;
+}
+
+table th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  border-bottom-style: none !important;
+}
+
+.mat-header-cell {
+  font-size: 1.3rem;
+}
+
+.mat-cell, .mat-footer-cell {
+  font-size: 1.4rem;
+}
+
+.mat-grid-tile .mat-figure {
+  justify-content: flex-start !important ;
+  position: initial !important;
+}
+
+.mat-body, .mat-body-1, .mat-typography {
+  font-size: 1.4rem;
+}

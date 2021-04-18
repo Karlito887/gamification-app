@@ -1,0 +1,148 @@
+@import '../../styles.scss';
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+  background-color: $color-light-dark;
+
+}
+
+.header {
+  overflow: hidden;
+  height: 60px;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 1.6rem;
+
+  &-part {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-menu {
+    margin-right: 1.2rem;
+    font-size: 2rem;
+
+    &-icon {
+      margin-top: 8px;
+    }
+  }
+
+  &-link {
+    display: block;
+    box-sizing: content-box;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    height: 100%;
+  }
+
+  .router-link-active::before  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-green;
+  }
+}
+
+.sidenav {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.4rem;
+
+
+  &-icon{
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+
+  }
+
+  .logo {
+    margin-bottom: 5rem;
+  }
+
+  .avatar {
+    margin-bottom: 1rem;
+  }
+
+  &-name {
+    display: block;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  &-buttons-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &-button {
+    height: 30px;
+    width: 150px;
+    background-color: $color-green;
+    border-radius: 3px;
+    font-size: 1.6rem;
+  }
+
+  &-button:hover {
+    cursor: pointer;
+  }
+
+  &-button:not(:last-child) {
+    margin-bottom: .8rem;
+  }
+
+  &-score p {
+    margin: 0px;
+  }
+
+  &-score {
+    margin-bottom: 1rem;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-link {
+    font-size: 1.9rem;
+    margin-bottom: 1.8rem;
+    width: max-content;
+  }
+
+  .router-link-active::after  {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-green;
+  }
+}
+
+.router-link-active {
+  color: $color-green;
+  position: relative;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+

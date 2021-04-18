@@ -3,7 +3,7 @@
 .exoft-achievements {
   font-size: 1.2rem;
 
-  &__item {
+  &-item {
     position: relative;
     display: flex;
     margin-bottom: 1.5rem;
@@ -42,12 +42,12 @@
     }
   }
 
-  &__top {
+  &-top {
     display: flex;
     margin-bottom: 2rem;
   }
 
-  &__count {
+  &-count {
     height: 1.8rem;
     margin-left: 1.5rem;
     padding: 0 1rem;
@@ -55,7 +55,7 @@
     background-color: $color-green;
   }
 
-  &__avatar {
+  &-avatar {
     z-index: 1;
   }
 }

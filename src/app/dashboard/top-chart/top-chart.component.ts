@@ -1,5 +1,9 @@
-import { GraphModel } from './../../models/graph.model';
+import { AvatarSize } from './../../enums/avatar-size.enum';
 import { Component, OnInit } from '@angular/core';
+
+import { UsersService } from './../../services/users.service';
+
+import { User } from './../../models/user';
 
 @Component({
   selector: 'app-top-chart',
@@ -7,66 +11,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-chart.component.scss']
 })
 export class TopChartComponent implements OnInit {
+  totalXp: number = 0;
+  maxWidth: number = 160;
+  users: User[] = [];
+  avatarSize = AvatarSize;
 
-  public totalXp: number = 0
-  public maxWidth: number = 160
-
-
-
-  users: GraphModel[] = [
-    {
-      firstName: 'Big',
-      lastName: 'Smoke',
-      image: '',
-      xp: 120,
-      color: 'purple'
-    },
-    {
-      firstName: 'Frank',
-      lastName: 'Tanpeny',
-      image: '',
-      xp: 90,
-      color: 'blue'
-    },
-    {
-      firstName: 'Carl',
-      lastName: 'Jhonson',
-      image: '',
-      xp: 80,
-      color: 'green'
-    },
-    {
-      firstName: 'Woozy',
-      lastName: 'Moo',
-      image: '',
-      xp: 30,
-      color: 'black'
-    },
-    {
-      firstName: 'Cezar',
-      lastName: 'Veliapano',
-      image: '',
-      xp: 0,
-      color: 'coral'
-    },
-  ]
-
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
-    this.buildGraph()
-    console.log(this.users);
-
+    this.users = this.usersService.getUsers();
+    this.buildGraph();
   }
 
-  buildGraph() {
+  private buildGraph(): void {
     this.users.forEach(element => {
-      this.totalXp += element.xp;
+      if (element.xp) {
+        this.totalXp += element.xp;
+      }
     });
 
     this.users.forEach(element => {
-      element.size = Math.round((element.xp * this.maxWidth)/this.totalXp) + '%';
+      if (element.xp) {
+        element.size = Math.round((element.xp * this.maxWidth) / this.totalXp) + '%';
+      }
     });
   }
-
 }
