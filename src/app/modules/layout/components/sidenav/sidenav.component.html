@@ -1,0 +1,35 @@
+<div class="sidenav" *ngIf="user$ | async as user">
+  <div class="sidenav-menu">
+    <mat-icon class="icon sidenav-icon" (click)="sidenavService.toggleSidenav()">menu</mat-icon>
+  </div>
+
+  <div class="logo">gmfctn!</div>
+
+  <app-avatar [user]="user" [size]="avatarSize.Big"></app-avatar>
+
+  <span class="sidenav-name">{{ user.firstName + ' ' + user.lastName }}</span>
+
+  <div class="sidenav-buttons-group">
+    <button class="button sidenav-button" (click)="dialogsService.openEditProfileDialog()">Edit profile</button>
+
+    <button class="button sidenav-button" (click)="dialogsService.openChangePasswordDialog()">Change password</button>
+
+    <button class="button sidenav-button">Log out</button>
+  </div>
+
+  <div class="sidenav-score">
+    <p><span class="green-text">Total: </span>{{ user.badgesCount }} badges</p>
+
+    <p><span class="green-text">Total: </span>{{ user.xp }} XP</p>
+  </div>
+
+  <div class="sidenav-links">
+    <a mat-raised-button class="sidenav-link" routerLink="dashboard" routerLinkActive="router-link-active">
+      Dashboard
+    </a>
+
+    <a mat-raised-button class="sidenav-link" routerLink="badges" routerLinkActive="router-link-active">
+      Badges
+    </a>
+  </div>
+</div>

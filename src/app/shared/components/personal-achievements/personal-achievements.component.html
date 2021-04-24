@@ -1,0 +1,29 @@
+<div class="personal-achievements">
+  <div class="space-between personal-achievements-top">
+    <p class="block-title">{{ title }}</p>
+
+    <button class="button block-button" (click)="openRequestDialog()">Request</button>
+  </div>
+
+  <ul class="personal-achievements-list">
+    <li class="personal-achievements-item" *ngFor="let item of (personalAchievements$ | async)">
+      <div class="space-between">
+        <div>
+          <img src="{{ item.iconId || '../../../../../../assets/achievement.jpg' }}" alt="achieve image" class="personal-achievements-image">
+        </div>
+
+        <div class="personal-achievements-info">
+          <span class="personal-achievements-title">{{ item.name }}</span>
+
+          <span class="personal-achievements-time">{{ item.addedTime | reletiveTime }}</span>
+        </div>
+      </div>
+
+      <div class="personal-achievements-points">
+        <div class="personal-achievements-circle"></div>
+
+        <span>+ {{ item.xp }} xp</span>
+      </div>
+    </li>
+  </ul>
+</div>

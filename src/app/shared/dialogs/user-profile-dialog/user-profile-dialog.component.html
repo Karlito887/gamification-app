@@ -1,0 +1,29 @@
+<div class="dialog-content-wrapper">
+  <div class="dialog-top">
+    <mat-icon class="icon" mat-dialog-close>close</mat-icon>
+  </div>
+
+  <mat-dialog-content class="space-between">
+    <div class="user-info">
+      <app-avatar [user]="user" [size]="avatarSize.Big"></app-avatar>
+
+      <div class="user-details">
+        <p class="user-name">{{ user.firstName + ' ' + user.lastName }}</p>
+
+        <p><span class="green-text">EXP:</span> {{ user.xp }}XP</p>
+      </div>
+    </div>
+
+    <div class="achievements-container">
+      <div class="achievement" *ngFor="let achievement of (achievements$ | async)">
+        <div matBadge="{{ achievement.count }}">
+          <img src="../../../assets/achievement.jpg" class="achievement-image" alt="achievement icon">
+        </div>
+
+        <p>{{ achievement.achievement.name }}</p>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>
+
+<button class="dialog-button button" [disabled]="isMe$ | async" (click)="sayThanks()">SAY THANKS</button>

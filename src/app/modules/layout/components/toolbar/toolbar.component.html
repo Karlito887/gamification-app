@@ -1,0 +1,35 @@
+<mat-toolbar class="header dark-block">
+  <div class="header-part">
+    <div class="header-menu">
+      <mat-icon class="header-menu-icon icon" (click)="sidenavService.toggleSidenav()">menu</mat-icon>
+    </div>
+
+    <div class="logo">gmfctn!</div>
+  </div>
+
+  <div class="header-part">
+    <a class="header-link" routerLink="dashboard" routerLinkActive="router-link-active">
+      Dashboard
+    </a>
+
+    <a class="header-link" routerLink="badges" routerLinkActive="router-link-active">
+      Badges
+    </a>
+  </div>
+
+  <div class="header-part" *ngIf="user$ | async as user">
+    <app-avatar [user]="user" [size]="avatarSize.Min"></app-avatar>
+
+    <span>{{ user.firstName + ' ' + user.lastName }}</span>
+
+    <mat-icon class="icon" [matMenuTriggerFor]="headerMenu">arrow_drop_down</mat-icon>
+
+    <mat-menu #headerMenu="matMenu">
+      <button mat-menu-item (click)="dialogsService.openEditProfileDialog()">Edit profile</button>
+
+      <button mat-menu-item (click)="dialogsService.openChangePasswordDialog()">Change password</button>
+
+      <button mat-menu-item>Log out</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

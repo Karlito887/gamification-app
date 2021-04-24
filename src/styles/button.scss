@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-.btn {
+.button {
   cursor: pointer;
 
   &:active {
@@ -22,7 +22,7 @@
   font-size: 1.4rem;
 }
 
-.dialog-btn {
+.dialog-button {
   width: 100%;
   background-color: $color-green;
   height: 4rem;

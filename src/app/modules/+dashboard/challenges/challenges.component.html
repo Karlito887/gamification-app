@@ -1,0 +1,43 @@
+<div class="challenges">
+  <div class="space-between">
+    <p class="block-title">challenges</p>
+
+    <button class="button block-button">Show more</button>
+  </div>
+
+  <div class="challenges-section">
+    <p class="green-text challenges-title">Available</p>
+
+    <div class="challenges-info">
+      <img class="challenges-image-main" src="../../../assets/riding.jpg" alt="riding">
+
+      <span class="challenges-info-current">57K bike</span>
+
+      <div class="challenges-info-details">
+        <p class="green-text">93% of 57K complete</p>
+
+        <p>05:20:00 Remaining</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="challenges-section">
+    <p class="green-text challenges-title">Ended</p>
+
+    <div class="challenges-info">
+      <div class="challenges-image" *ngFor="let el of [1, 2, 3, 4, 5, 6]">
+        <span>5K Swim</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="challenges-section">
+    <p class="green-text challenges-title">Started</p>
+
+    <div class="challenges-info">
+      <div class="challenges-image" *ngFor="let el of [1, 2, 3, 4]">
+        <span>5K Swim</span>
+      </div>
+    </div>
+  </div>
+</div>

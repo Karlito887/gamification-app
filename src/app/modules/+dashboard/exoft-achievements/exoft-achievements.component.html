@@ -1,0 +1,27 @@
+<div class="exoft-achievements">
+  <div class="exoft-achievements-top">
+    <div class="block-title">exoft achievements</div>
+
+    <div class="exoft-achievements-count">{{ (achievementsHistory$ | async)?.length }}</div>
+  </div>
+
+  <div class="exoft-achievements-content">
+    <div class="exoft-achievements-item" *ngFor="let item of (achievementsHistory$ | async)">
+      <div class="exoft-achievements-avatar">
+        <app-avatar [size]="avatarSize.Min" [user]="item.user"></app-avatar>
+      </div>
+
+      <div class="exoft-achievements-item-data">
+        <div class="exoft-achievements-item-info">
+          <span class="green-text">{{ item.user.firstName + ' ' + item.user.lastName }}</span>
+
+          <span class="exoft-achievements-item-date">{{ item.achievement.addedTime | reletiveTime }}</span>
+        </div>
+
+        <span class="exoft-achievements-item-title">Got achievement {{ item.achievement.name }}</span>
+
+        <div class="exoft-achievements-item-records">Records</div>
+      </div>
+    </div>
+  </div>
+</div>
