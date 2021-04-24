@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { take } from 'rxjs/operators';
 
 import { AuthUserService } from '../../../shared/services/auth-user.service';
 
@@ -30,10 +29,8 @@ export class SignInComponent implements OnInit {
 
   onSubmit(): void {
     this.authUserService.authenticate(this.signInForm.value)
-      .pipe(take(1))
-      .subscribe(res => {
-        console.log(res)
-        this.router.navigate(['/dashboard'])
-      })
+    .subscribe(() => {
+        this.router.navigate(['/dashboard']);
+      });
   }
 }

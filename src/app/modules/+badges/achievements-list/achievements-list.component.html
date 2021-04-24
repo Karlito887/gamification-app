@@ -1,13 +1,13 @@
 <h2 class="title">full list of achievements</h2>
 
-<table mat-table [dataSource]="achievements">
+<table mat-table [dataSource]="achievements$">
   <ng-container matColumnDef="title">
     <th mat-header-cell *matHeaderCellDef> Achievement </th>
 
     <td mat-cell *matCellDef="let element">
       <div class="achievement-info">
-        <img src="{{ element.image }}" alt="achieve image" class="achievement-image">
-        {{element.title}}
+        <img src="{{ element.iconId || '../../..//../../../assets/achievement.jpg' }}" alt="achieve image" class="achievement-image">
+        {{element.name}}
       </div>
     </td>
   </ng-container>
@@ -15,13 +15,13 @@
   <ng-container matColumnDef="xp">
     <th mat-header-cell *matHeaderCellDef> EXP points </th>
 
-    <td mat-cell *matCellDef="let element">+ {{element.xpCount}} XP</td>
+    <td mat-cell *matCellDef="let element">+ {{element.xp}} XP</td>
   </ng-container>
 
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef> Date </th>
 
-    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    <td mat-cell *matCellDef="let element"> {{ element.addedTime | reletiveTime }} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

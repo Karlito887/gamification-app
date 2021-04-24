@@ -1,76 +1,54 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { tap, switchMap } from 'rxjs/operators';
 
-import { Achievement } from '../models/achievement';
-import { User } from '../models/user';
+import { UserCredentials } from '../models/user-credentials';
+import { User } from './../models/user';
+
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthUserService {
-  // user: User = {
-  //   firstName: 'Nazarii',
-  //   lastName: 'Karlyk',
-  //   image: '../../assets/CJ.jpg',
-  //   badges: 5,
-  //   xp: 80,
-  //   color: 'green',
-  //   achievements: [
-  //     {
-  //       xpCount: 15,
-  //       title: 'Exoft turbo power',
-  //       image: '../../assets/achievement.jpg',
-  //       date: '0 mins ago',
-  //       count: 2
-  //     },
-  //     {
-  //       xpCount: 20,
-  //       title: 'Exoft skylark power',
-  //       image: '../../assets/achievement.jpg',
-  //       date: '0 mins ago',
-  //       count: 1
-  //     },
-  //     {
-  //       xpCount: 30,
-  //       title: 'Exoft corporate power',
-  //       image: '../../assets/achievement.jpg',
-  //       date: '0 mins ago',
-  //       count: 1
-  //     },
-  //   ]
-  // };
-  user$: BehaviorSubject<any> = new BehaviorSubject(null as unknown as User)
-  private apiUrl = 'https://nazariy-karlyk.herokuapp.com/api/';
+  user$: BehaviorSubject<any> = new BehaviorSubject(null as unknown as User);
 
-  constructor(private httpClient: HttpClient) {}
+  private apiUrl = environment.apiUrl;
 
-  authenticate(loginData: any) {
-    return this.httpClient.post(`${this.apiUrl}authenticate`, loginData)
-    .pipe(
-      tap(user => this.user$.next(user))
-    )
+  constructor(private httpClient: HttpClient) { }
+
+  authenticate(loginData: UserCredentials): Observable<User> {
+    return this.httpClient.post<User>(`${this.apiUrl}authenticate`, loginData)
+      .pipe(
+        tap(user => {
+          this.user$.next(user);
+          this.storeTokens(user.token, user.refreshToken);
+        })
+      );
   }
 
-  getUsers() {
-    return this.httpClient.get('https://nazariy-karlyk.herokuapp.com/api/users/current-user/achievements?CurrentPage=1&PageSize=111')
+  refreshToken(): Observable<User> {
+    return this.httpClient.post<User>(`${this.apiUrl}authenticate/refresh`, {
+      'refreshToken': localStorage.getItem('refresh_token')
+    })
+      .pipe(
+        switchMap(user => {
+          this.user$.next(user);
+          this.storeTokens(user.token, user.refreshToken);
+
+          return of(user);
+        })
+      );
   }
 
-  // getUser(): User {
-  //   return this.user;
-  // }
+  storeTokens(token: string, refreshToken: string): void {
+    localStorage.setItem('token', token);
+    localStorage.setItem('refresh_token', refreshToken);
+  }
 
-  // getAchievements(): Achievement[] {
-  //   const result: Achievement[] = [];
-  //   this.user.achievements.forEach(el => {
-  //     el.count = el.count || 1;
-
-  //     for (let i = 0; i < el.count; i++) {
-  //       result.push(el);
-  //     }
-  //   });
-
-  //   return result;
-  // }
+  clearTokens(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('refresh_token');
+  }
 }

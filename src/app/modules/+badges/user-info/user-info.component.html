@@ -1,6 +1,6 @@
 <div class="user-wrapper" *ngIf="user$ | async as user">
   <div class="button-wrapper">
-    <button class="btn block-button" (click)="dialogsService.openEditProfileDialog()">Edit</button>
+    <button class="button block-button" (click)="dialogsService.openEditProfileDialog()">Edit</button>
   </div>
 
   <app-avatar [user]="user" [size]="avatarSize.Big"></app-avatar>

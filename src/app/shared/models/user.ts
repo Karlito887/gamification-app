@@ -14,4 +14,5 @@ export interface User {
   badgesCount: number;
   roles: Roles[];
   avatarId: string | null;
+  size?: string;
 }

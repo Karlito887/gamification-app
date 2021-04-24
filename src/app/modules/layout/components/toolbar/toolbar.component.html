@@ -18,7 +18,7 @@
   </div>
 
   <div class="header-part" *ngIf="user$ | async as user">
-    <app-avatar [user]="user$ | async" [size]="avatarSize.Min"></app-avatar>
+    <app-avatar [user]="user" [size]="avatarSize.Min"></app-avatar>
 
     <span>{{ user.firstName + ' ' + user.lastName }}</span>
 

@@ -6,7 +6,7 @@
       <img class="star-image" src="../../../assets/star-big-image.png" alt="star">
     </div>
 
-    <div *ngIf="thankUser">
+    <div *ngIf="(thankUser$ | async) as thankUser else thankUserAbsent">
       <p class="thank-you-title">Hey hey hey. Thank for your help!!!</p>
 
       <div class="thank-you-user">
@@ -15,5 +15,9 @@
         <p class="green-color name">{{ thankUser.firstName + ' ' + thankUser.lastName }}</p>
       </div>
     </div>
+
+    <ng-template #thankUserAbsent>
+      <p>Nobody say thanks yet</p>
+    </ng-template>
   </div>
 </div>

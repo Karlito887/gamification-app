@@ -5,7 +5,7 @@
 
   <mat-dialog-content class="space-between">
     <div class="user-info">
-      <app-avatar [user]="user" [size]="'big'"></app-avatar>
+      <app-avatar [user]="user" [size]="avatarSize.Big"></app-avatar>
 
       <div class="user-details">
         <p class="user-name">{{ user.firstName + ' ' + user.lastName }}</p>
@@ -15,15 +15,15 @@
     </div>
 
     <div class="achievements-container">
-      <!-- <div class="achievement" *ngFor="let achievement of user.achievements">
+      <div class="achievement" *ngFor="let achievement of (achievements$ | async)">
         <div matBadge="{{ achievement.count }}">
           <img src="../../../assets/achievement.jpg" class="achievement-image" alt="achievement icon">
         </div>
 
-        <p>{{ achievement.title }}</p>
-      </div> -->
+        <p>{{ achievement.achievement.name }}</p>
+      </div>
     </div>
   </mat-dialog-content>
 </div>
 
-<button class="dialog-btn btn" [disabled]="isMe" (click)="sayThanks()">SAY THANKS</button>
+<button class="dialog-button button" [disabled]="isMe$ | async" (click)="sayThanks()">SAY THANKS</button>

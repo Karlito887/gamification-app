@@ -6,7 +6,7 @@ import { SidenavService } from '../../../../shared/services/sidenav.service';
 import { AuthUserService } from '../../../../shared/services/auth-user.service';
 
 import { User } from '../../../../shared/models/user';
-import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidenav',
@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['../../layout.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  user$: Subject<User>;
+  user$: Observable<User>;
   avatarSize = AvatarSize;
 
   constructor(private authUserService: AuthUserService,

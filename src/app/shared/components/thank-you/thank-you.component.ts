@@ -1,4 +1,6 @@
+import { RequestDataService } from './../../services/request-data.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { User } from '../../models/user';
 
@@ -8,11 +10,16 @@ import { User } from '../../models/user';
   styleUrls: ['./thank-you.component.scss']
 })
 export class ThankYouComponent implements OnInit {
-  thankUser: User;
 
-  constructor() { }
+  thankUser$: Observable<User>;
+
+  constructor(private requestDataService: RequestDataService) { }
 
   ngOnInit(): void {
-    // this.thankUser = this.usersService.getUsers().sort((a, b) => b.xp - a.xp)[0];
+    this.setThankUser();
+  }
+
+  setThankUser(): void {
+    this.thankUser$ = this.requestDataService.getThankUser();
   }
 }

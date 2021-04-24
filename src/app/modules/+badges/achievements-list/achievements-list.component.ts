@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { AuthUserService } from '../../../shared/services/auth-user.service';
+import { RequestDataService } from './../../../shared/services/request-data.service';
 
 import { Achievement } from '../../../shared/models/achievement';
 
@@ -10,13 +11,17 @@ import { Achievement } from '../../../shared/models/achievement';
   styleUrls: ['./achievements-list.component.scss']
 })
 export class AchievementsListComponent implements OnInit {
-  achievements: Achievement[];
+  achievements$: Observable<Achievement[]>;
   displayedColumns: string[];
 
-  constructor(private authUserService: AuthUserService) { }
+  constructor(private requestDataService: RequestDataService) { }
 
   ngOnInit(): void {
-    // this.achievements = this.authUserService.getAchievements();
+    this.setAllAchievements();
     this.displayedColumns = ['title', 'xp', 'date'];
+  }
+
+  setAllAchievements(): void {
+    this.achievements$ = this.requestDataService.getAchievements();
   }
 }

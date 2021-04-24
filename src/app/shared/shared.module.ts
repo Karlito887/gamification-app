@@ -12,6 +12,7 @@ import { UserProfileDialogComponent } from './dialogs/user-profile-dialog/user-p
 import { SayThanksDialogComponent } from './dialogs/say-thanks-dialog/say-thanks-dialog.component';
 import { MaterialModule } from './modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ReletiveTimePipe } from './pipes/reletive-time.pipe';
 
 const components = [
   AvatarComponent,
@@ -23,6 +24,7 @@ const components = [
   SayThanksDialogComponent,
   EditProfileDialogComponent,
   ChangePasswordDialogComponent,
+  ReletiveTimePipe
 ];
 
 @NgModule({

@@ -1,7 +1,11 @@
 export interface Achievement {
-  xpCount: number;
-  title: string;
-  image: string;
-  date: string;
+  achievementId: string;
+  addedTime: string;
+  description: string;
+  iconId: string | null;
+  id: string;
+  name: string;
+  xp: number;
   count?: number;
 }
+
